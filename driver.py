@@ -20,5 +20,13 @@ def convertwebmToMp3(url):
     # Return the file name
     return fileName + ".mp3"
 
-link = "https://www.youtube.com/watch?v=qaqvwkhelS8"
-convertwebmToMp3(link)
+def parseUrls():
+    ''' 
+    loop through each line in urls.txt in which 
+    each line is a url and convert it to mp3
+    '''
+    with open("urls.txt", "r") as f:
+        for line in f:
+            convertwebmToMp3(line)
+
+parseUrls()
